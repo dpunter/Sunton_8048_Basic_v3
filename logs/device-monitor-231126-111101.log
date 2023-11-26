@@ -1,0 +1,166 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3808,len:0x44c
+load:0x403c9700,len:0xbe4
+load:0x403cc700,len:0x2a38
+entry 0x403c98d4
+[   128][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+[   700][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=19 scl=20 freq=100000
+[   701][W][Wire.cpp:301] begin(): Bus already started in Master Mode.
+[   704][E][esp32-hal-gpio.c:102] __pinMode(): Invalid pin selected
+E (582) gpio: gpio_set_level(226): GPIO output gpio_num error
+E (597) gpio: gpio_set_level(226): GPIO output gpio_num error
+E (603) gpio: gpio_set_level(226): GPIO output gpio_num error
+[   781][E][esp32-hal-gpio.c:102] __pinMode(): Invalid pin selected
+Setup done
+Button_Touched: Test 
+Button_Touched: Test 
+Button_Touched: Test 
+Button_Touched: Test 
+Button_Touched: Test 
+Button_Touched: Test 
+Button_Touched: Goto_Screen2 
+Goto Screen: Goto_Screen2 
+Load Screen2:
+Clean Screen1:
+Delete Screen1:
+Button_Touched: Goto_Screen3 
+Goto Screen: Goto_Screen3 
+Load Screen3:
+Clean Screen2:
+Delete Screen2:
+Button_Touched: Goto_Screen1 
+Goto Screen: Goto_Screen1 
+Create Screen1:
+Clean Screen3:
+Delete Screen3:
+Button_Touched: Goto_Screen2 
+Goto Screen: Goto_Screen2 
+Load Screen2:
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x4204ae2d  PS      : 0x00060230  A0      : 0x82009e7a  A1      : 0x3fcebb30  
+A2      : 0x00000050  A3      : 0x00000001  A4      : 0x00000001  A5      : 0x00000080  
+A6      : 0x00000000  A7      : 0x00000001  A8      : 0x00000050  A9      : 0x3fcebb70  
+A10     : 0x3fcebbcc  A11     : 0x00000004  A12     : 0x00000000  A13     : 0x4203d790  
+A14     : 0x3fcf089a  A15     : 0x00000002  SAR     : 0x0000001a  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000054  LBEG    : 0x400556d5  LEND    : 0x400556e5  LCOUNT  : 0xfffffffc  
+
+
+Backtrace: 0x4204ae2a:0x3fcebb30 0x42009e77:0x3fcebb50 0x42002ad0:0x3fcebb70 0x42002dad:0x3fcebc30 0x42002785:0x3fcebc50 0x42002f4a:0x3fcebc70 0x42002fa6:0x3fcebc90 0x42003596:0x3fcebcd0 0x42003c4c:0x3fcebd00 0x42019148:0x3fcebd50 0x420026b7:0x3fcebd80 0x4202b399:0x3fcebda0
+
+  #0  0x4204ae2a:0x3fcebb30 in lv_obj_get_screen at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_obj_tree.c:256
+  #1  0x42009e77:0x3fcebb50 in lv_obj_get_disp at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_obj_tree.c:277
+  #2  0x42002ad0:0x3fcebb70 in lv_scr_load_anim at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_disp.c:224
+  #3  0x42002dad:0x3fcebc30 in lv_disp_load_scr at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_disp.c:84
+  #4  0x42002785:0x3fcebc50 in button_event_cb(_lv_event_t*) at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_disp.h:207
+      (inlined by) button_event_cb(_lv_event_t*) at src/main.cpp:287
+  #5  0x42002f4a:0x3fcebc70 in event_send_core at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_event.c:467
+  #6  0x42002fa6:0x3fcebc90 in lv_event_send at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_event.c:75
+  #7  0x42003596:0x3fcebcd0 in indev_proc_release at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_indev.c:980
+  #8  0x42003c4c:0x3fcebd00 in indev_pointer_proc at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_indev.c:384
+      (inlined by) lv_indev_read_timer_cb at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_indev.c:101
+  #9  0x42019148:0x3fcebd50 in lv_timer_exec at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/misc/lv_timer.c:313
+      (inlined by) lv_timer_handler at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/misc/lv_timer.c:109
+  #10 0x420026b7:0x3fcebd80 in loop() at src/main.cpp:221
+  #11 0x4202b399:0x3fcebda0 in loopTask(void*) at C:/Users/dpunt/.platformio/packages/framework-arduinoespressif32/cores/esp32/main.cpp:50
+
+
+
+
+ELF file SHA256: 6639db2c84d78c81
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4204d4e6
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3808,len:0x44c
+load:0x403c9700,len:0xbe4
+load:0x403cc700,len:0x2a38
+entry 0x403c98d4
+[   134][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+[   706][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=19 scl=20 freq=100000
+[   707][W][Wire.cpp:301] begin(): Bus already started in Master Mode.
+[   709][E][esp32-hal-gpio.c:102] __pinMode(): Invalid pin selected
+E (582) gpio: gpio_set_level(226): GPIO output gpio_num error
+E (597) gpio: gpio_set_level(226): GPIO output gpio_num error
+E (603) gpio: gpio_set_level(226): GPIO output gpio_num error
+[   787][E][esp32-hal-gpio.c:102] __pinMode(): Invalid pin selected
+Setup done
+Button_Touched: Goto_Screen2 
+Goto Screen: Goto_Screen2 
+Load Screen2:
+Clean Screen1:
+Delete Screen1:
+Button_Touched: Goto_Screen3 
+Goto Screen: Goto_Screen3 
+Load Screen3:
+Clean Screen2:
+Delete Screen2:
+Button_Touched: Goto_Screen1 
+Goto Screen: Goto_Screen1 
+Create Screen1:
+Clean Screen3:
+Delete Screen3:
+Button_Touched: Goto_Screen2 
+Goto Screen: Goto_Screen2 
+Load Screen2:
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x42002ada  PS      : 0x00060630  A0      : 0x82002db0  A1      : 0x3fcebb70  
+A2      : 0x3fc98a18  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x3fc9928c  A8      : 0x82002ad8  A9      : 0x3fcebb50  
+A10     : 0x3fc9928c  A11     : 0x3fc98a18  A12     : 0x3fca4720  A13     : 0x00000000  
+A14     : 0x3fcf0618  A15     : 0x00000001  SAR     : 0x0000000a  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000018  LBEG    : 0x400556d5  LEND    : 0x400556e5  LCOUNT  : 0xfffffff0  
+
+
+Backtrace: 0x42002ad7:0x3fcebb70 0x42002dad:0x3fcebc30 0x42002785:0x3fcebc50 0x42002f4a:0x3fcebc70 0x42002fa6:0x3fcebc90 0x42003596:0x3fcebcd0 0x42003c4c:0x3fcebd00 0x42019148:0x3fcebd50 0x420026b7:0x3fcebd80 0x4202b399:0x3fcebda0
+
+  #0  0x42002ad7:0x3fcebb70 in lv_scr_load_anim at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_disp.c:225
+  #1  0x42002dad:0x3fcebc30 in lv_disp_load_scr at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_disp.c:84
+  #2  0x42002785:0x3fcebc50 in button_event_cb(_lv_event_t*) at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_disp.h:207
+      (inlined by) button_event_cb(_lv_event_t*) at src/main.cpp:287
+  #3  0x42002f4a:0x3fcebc70 in event_send_core at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_event.c:467
+  #4  0x42002fa6:0x3fcebc90 in lv_event_send at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_event.c:75
+  #5  0x42003596:0x3fcebcd0 in indev_proc_release at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_indev.c:980
+  #6  0x42003c4c:0x3fcebd00 in indev_pointer_proc at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_indev.c:384
+      (inlined by) lv_indev_read_timer_cb at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/core/lv_indev.c:101
+  #7  0x42019148:0x3fcebd50 in lv_timer_exec at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/misc/lv_timer.c:313
+      (inlined by) lv_timer_handler at .pio/libdeps/esp32-s3-Sunton_800x480/lvgl/src/misc/lv_timer.c:109
+  #8  0x420026b7:0x3fcebd80 in loop() at src/main.cpp:221
+  #9  0x4202b399:0x3fcebda0 in loopTask(void*) at C:/Users/dpunt/.platformio/packages/framework-arduinoespressif32/cores/esp32/main.cpp:50
+
+
+
+
+ELF file SHA256: 6639db2c84d78c81
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4204d4e6
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3808,len:0x44c
+load:0x403c9700,len:0xbe4
+load:0x403cc700,len:0x2a38
+entry 0x403c98d4
+[   134][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+[   706][I][esp32-hal-i2c.c:75] i2cInit(): Initialising I2C Master: sda=19 scl=20 freq=100000
+[   707][W][Wire.cpp:301] begin(): Bus already started in Master Mode.
+[   709][E][esp32-hal-gpio.c:102] __pinMode(): Invalid pin selected
+E (582) gpio: gpio_set_level(226): GPIO output gpio_num error
+E (597) gpio: gpio_set_level(226): GPIO output gpio_num error
+E (603) gpio: gpio_set_level(226): GPIO output gpio_num error
+[   787][E][esp32-hal-gpio.c:102] __pinMode(): Invalid pin selected
+Setup done
